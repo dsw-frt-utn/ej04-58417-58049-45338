@@ -19,11 +19,12 @@ public class ListarVehiculosView extends javax.swing.JFrame {
     private void listarVehiculos(){
         ArrayList<VehiculoViewModel> vehiculos = Controlador.getVehiculos();
         vehiculosGrid.setModel(new DefaultTableModel(new Object[][] {}, 
-            new String[] { "Patente","Vehículo", "Tipo", "Sucursal", "Cap.Carga", "Km/litro", "Año", "Litros extra", "Km a recorrer" }));
+            new String[] { "Patente","Marca","Vehículo", "Tipo", "Sucursal", "Cap.Carga", "Km/litro", "Año", "Litros extra", "Km a recorrer" }));
         
         for(VehiculoViewModel vehiculo : vehiculos){
             ((DefaultTableModel)vehiculosGrid.getModel()).addRow(new Object[] {
                 vehiculo.getPatente(),
+                vehiculo.getMarca(),
                 vehiculo.getVehiculo(),
                 vehiculo.getTipo(),
                 vehiculo.getSucursal(),
@@ -158,7 +159,7 @@ public class ListarVehiculosView extends javax.swing.JFrame {
          TableModel table = vehiculosGrid.getModel();
          Map<String, Double> lista = new HashMap<>();
          for(int i=0;i< table.getRowCount();i++){
-             lista.put((String)table.getValueAt(i, 0), (Double)table.getValueAt(i, 8));
+             lista.put((String)table.getValueAt(i, 0), (Double)table.getValueAt(i, 9));
          }
          double[] consumos = Controlador.calcularConsumos(lista);
          totalConsumoElectricosValue.setText(String.format("%.2f%n kWh", consumos[0]));
