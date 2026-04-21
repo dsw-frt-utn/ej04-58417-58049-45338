@@ -4,6 +4,7 @@ import domain.*;
 
 public class VehiculoViewModel {
     private String patente;
+    private String marca;
     private String vehiculo;
     private String tipo;
     private String sucursal;
@@ -16,7 +17,8 @@ public class VehiculoViewModel {
     public VehiculoViewModel(Vehiculo vehiculo){
         if(vehiculo == null)return;
         patente = vehiculo.getPatente();
-        this.vehiculo = vehiculo.toString();
+        marca = vehiculo.getMarca().toString();
+        this.vehiculo = vehiculo.getModelo().toString();
         tipo = vehiculo.getTipo().name();
         sucursal = vehiculo.getCodigoSucursal();
         capacidadCarga = vehiculo.getCapacidadCarga();
@@ -61,4 +63,10 @@ public class VehiculoViewModel {
     public String getSucursal() {
         return sucursal;
     }
+
+    public String getMarca() {
+        return marca;
+    }
+    
+    
 }

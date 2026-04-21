@@ -31,4 +31,14 @@ public class Controlador {
         }
         return new double[] {consumoElectricos, consumoCombustible};
     }
+    
+    public static void abrirVentanaListar(java.awt.Frame parent){
+        new ListarVehiculosView(parent, true).setVisible(true);
+    }
+    
+    public static void abrirVentanaAgregar(java.awt.Frame parent){
+   //   new AltaVehiculoView(parent, true).setVisible(true);
+    }
+    
+    
 }
