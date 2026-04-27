@@ -129,7 +129,9 @@ public class Controlador {
     }
     
     public static void abrirVentanaAgregar(java.awt.Frame parent){
-   //   new AltaVehiculoView(parent, true).setVisible(true);
+        AgregarVehiculoView view = new AgregarVehiculoView(parent, true);
+        inicializarCombos(view);
+        view.setVisible(true);
     }
     
     
