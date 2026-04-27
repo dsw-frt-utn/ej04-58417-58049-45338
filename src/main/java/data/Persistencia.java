@@ -72,4 +72,12 @@ public class Persistencia {
         inicializarMarcas();
         inicializarVehiculos();
     }
+    
+     public static ArrayList<Marca> getMarcas(){
+        return marcas;
+    }
+    
+    public static ArrayList<Sucursal> getSucursales(){
+        return sucursales;
+    }
 }
